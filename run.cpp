@@ -4,7 +4,6 @@
 #include "hpp/Layout.h"
 #include "hpp/Unit.h"
 #include "hpp/Moover.h"
-//#include "Navigator.h"
 
 
 int main() {
@@ -30,13 +29,8 @@ int main() {
 
     mooverPacman->start();
     mooverGhost->start();
-
-    do {
-        system("cls");
-        mainLayout->render();
-    }
-
-    while( c != 27 ); //Esc
+    
+    mainLayout->render();
 
     return 0;
 }

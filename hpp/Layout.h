@@ -1,4 +1,4 @@
-#include "config.h"
+#include "../config.h"
 
 #ifndef LAYOUT_H
 #define LAYOUT_H

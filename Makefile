@@ -18,8 +18,8 @@ clear:
 	rm ./tmp/*.o
 
 all: compile
-	g++ mainPacman.cpp tmp/*.o && ./a.exe
+	g++ run.cpp tmp/*.o && ./a.exe
 
 run:
-	g++ mainPacman.cpp tmp/*.o && ./a.exe
+	g++ run.cpp tmp/*.o && ./a.exe
 	
