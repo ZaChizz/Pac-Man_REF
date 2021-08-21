@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include "lib/getch.h"
 
 #include "hpp/Layout.h"
 #include "hpp/Unit.h"
@@ -13,6 +14,7 @@ int main() {
     Unit* unitGhost;
     Moover* mooverPacman;
     Moover* mooverGhost;
+    char c;
 
     mapIn = fopen("map.in", "r");
 
@@ -29,8 +31,17 @@ int main() {
 
     mooverPacman->start();
     mooverGhost->start();
-    
-    mainLayout->render();
+
+    do {
+        system("cls");
+        mainLayout->render();
+        c = getch();
+
+        
+    }
+    while(c != 27); //Esc
+
+    system("pause");
 
     return 0;
 }
