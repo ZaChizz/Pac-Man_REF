@@ -1,7 +1,7 @@
 #include "hpp/Moover.h"
 
 Moover::Moover(Layout* layout, Unit* unit): layout(layout), unit(unit) {
-
+    this->buffer.push('*');
 }
 
 Moover::~Moover() {
@@ -18,7 +18,24 @@ void Moover::start() {
 void Moover::moove(char direction) {
     this->nextPoint(direction);
     if ( this->checkBoard() && this->checkTrail() ) {
+        this->buffer.push(this->layout->getLabel(this->unit->getCoord()));
         this->layout->setPoint(this->unit->getLabel(), this->unit->getCoord());
+        this->rollBack(direction);
+        this->layout->setPoint(this->buffer.front(), this->unit->getCoord());
+        this->nextPoint(direction);
+        this->buffer.pop();
+    } else {
+        this->rollBack(direction);
+    }
+}
+
+void Moover::moove(char direction, char tail) {
+    this->nextPoint(direction);
+    if ( this->checkBoard() && this->checkTrail() ) {
+        this->layout->setPoint(this->unit->getLabel(), this->unit->getCoord());
+        this->rollBack(direction);
+        this->layout->setPoint(tail, this->unit->getCoord());
+        this->nextPoint(direction);
     } else {
         this->rollBack(direction);
     }

@@ -37,8 +37,9 @@ int main() {
         mainLayout->render();
         c = getch();
 
-        
+        mooverPacman->moove(c, '.');
     }
+    
     while(c != 27); //Esc
 
     system("pause");
