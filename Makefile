@@ -3,6 +3,8 @@ compile:
 	g++ -o tmp/Unit.o Unit.cpp -c
 	g++ -o tmp/Layout.o Layout.cpp -c
 	g++ -o tmp/Moover.o Moover.cpp -c
+	g++ -o tmp/Compass.o Compass.cpp -c
+	g++ -o tmp/Navigator.o Navigator.cpp -c
 
 
 test:
