@@ -1,21 +1,7 @@
 #ifndef COMPASS_H
 #define COMPASS_H
 
-#include <string>
-
-class CompassException
-{
-private:
-    std::string m_error;
- 
-public:
-    CompassException(std::string error): m_error(error) {
-    }
- 
-     const char* getError() { 
-        return m_error.c_str(); 
-    }
-};
+#include "../exeptions/CompassException.cpp"
 
 class Compass {
     private:
@@ -24,6 +10,8 @@ class Compass {
         char left;
         char right;
         void goBack(char* forward, char* backward);
+        void goBack();
+        void goTwist(char side);
     public:
         Compass();
         ~Compass();
@@ -33,8 +21,6 @@ class Compass {
         char getLeft();
         char getRight();
 
-        void goBack();
-        void goTwist(char side);
         void calibrate(char way);
 };
 

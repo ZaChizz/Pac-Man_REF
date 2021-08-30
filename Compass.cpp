@@ -49,7 +49,7 @@ void Compass::goTwist(char side) {
         goBack(&this->forward, &this->right);
         goBack(&this->backward, &this->left);
     } else {
-        throw CompassException("Wrong side! Side whoul be 'l' or 'r'.");
+        throw CompassException("Wrong side! The side would be 'l' or 'r'.");
     }
 }
 
@@ -73,4 +73,9 @@ void Compass::calibrate(char way) {
     if ( way == this->right ) {
         goTwist('r');
     }
+    
+    if ( !((way == this->forward) || (way == this->left) || (way == this->right) || (way == this->backward)) ) {
+        throw CompassException("Direction is not support!");
+    }
+    
 }

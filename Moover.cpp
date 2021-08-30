@@ -11,7 +11,9 @@ Moover::~Moover() {
 void Moover::start() {
     if ( this->checkBoard() && this->checkTrail() ) {
         this->layout->setPoint(this->unit->getLabel(), this->unit->getCoord());
-    } 
+    } else {
+        throw MooverException("Can't start(). Check the DEFAULT_COORD in config file.");
+    }
 }
 
 

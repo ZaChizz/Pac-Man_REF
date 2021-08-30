@@ -7,9 +7,13 @@ compile:
 	g++ -o tmp/Navigator.o Navigator.cpp -c
 
 
-test:
-	g++ -o mainTest.exe MainTest.cpp *.o && ./mainTest.exe
-	rm ./mainTest.exe
+test: compile
+	g++ -o mainTest.exe tests/mainTest.cpp tmp/*.o && ./mainTest.exe
+	rm mainTest.exe
+
+testDetail: compile
+	g++ -o mainTest.exe tests/mainTest.cpp tmp/*.o && ./mainTest.exe -s
+	rm mainTest.exe	
 
 coverage:
 	g++ -std=c++20 --coverage MainTest.cpp tmp/*.o -o testCoverage.exe && ./testCoverage.exe

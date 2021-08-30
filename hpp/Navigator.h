@@ -1,18 +1,11 @@
 #ifndef NAVIGATOR_H
 #define NAVIGATOR_H
 
-#ifndef ROWS
-#define ROWS 10
-#endif
-
-#ifndef COLS
-#define COLS 11
-#endif
-
 #include <time.h>
 #include <windows.h>
 #include "Compass.h"
 #include "Moover.h"
+#include "../exeptions/NavigatorException.cpp"
 
 class Navigator {
     public:

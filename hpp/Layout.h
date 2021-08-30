@@ -16,13 +16,15 @@
 #include <cstdio>
 #include "Point.h"
 
+#include "../exeptions/LayoutException.cpp"
+
 class Layout {
     private:
         FILE* in;
         int matrixSize;
+        char matrix[ROWS][COLS];
 
     public:
-        char matrix[ROWS][COLS];
         Layout(FILE* in);
         ~Layout();
 
@@ -32,7 +34,5 @@ class Layout {
         void render();
 
 };
-
-std::ostream& operator<<(std::ostream& out, Layout& layout);
 
 #endif
