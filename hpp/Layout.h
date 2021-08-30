@@ -16,7 +16,7 @@
 #include <cstdio>
 #include "Point.h"
 
-#include "../exeptions/LayoutException.cpp"
+#include "../exceptions/LayoutException.cpp"
 
 class Layout {
     private:

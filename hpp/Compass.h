@@ -1,7 +1,7 @@
 #ifndef COMPASS_H
 #define COMPASS_H
 
-#include "../exeptions/CompassException.cpp"
+#include "../exceptions/CompassException.cpp"
 
 class Compass {
     private:

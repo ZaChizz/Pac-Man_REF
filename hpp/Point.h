@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <cmath>
-#include "../exeptions/PointException.cpp"
+#include "../exceptions/PointException.cpp"
 
 class Point {
     private:

@@ -2,7 +2,7 @@
 #define UNIT_H
 
 #include "Point.h"
-#include "../exeptions/UnitException.cpp"
+#include "../exceptions/UnitException.cpp"
 
 class Unit {
     private:

@@ -5,7 +5,7 @@
 #include <windows.h>
 #include "Compass.h"
 #include "Moover.h"
-#include "../exeptions/NavigatorException.cpp"
+#include "../exceptions/NavigatorException.cpp"
 
 class Navigator {
     public:

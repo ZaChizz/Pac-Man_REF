@@ -5,7 +5,7 @@
 #include "Layout.h"
 #include "Unit.h"
 #include "Point.h"
-#include "../exeptions/MooverException.cpp"
+#include "../exceptions/MooverException.cpp"
 
 class Moover {
     private:
