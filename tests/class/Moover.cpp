@@ -3,9 +3,9 @@
 #include "../../hpp/Unit.h"
 
 TEST_CASE("Moover POSITIVE test") {
-    SECTION("Constructor") {
+    SECTION("Constructor()") {
         FILE* in;
-        in = fopen("tests/source/map.in", "r");
+        in = fopen("tests/source/positive/map.in", "r");
         Layout* l = new Layout(in);
         Unit* u = new Unit('$');
 
@@ -14,4 +14,3 @@ TEST_CASE("Moover POSITIVE test") {
         delete(u);
     }
 }
-

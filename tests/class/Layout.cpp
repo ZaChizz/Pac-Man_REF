@@ -6,7 +6,7 @@
 TEST_CASE("Layout POSITIVE test") {
     SECTION("Constructor()") {
         FILE* in;
-        in = fopen("tests/source/map.in", "r");
+        in = fopen("tests/source/positive/map.in", "r");
         Layout* l;
 
         CHECK_NOTHROW(l = new Layout(in));
@@ -17,7 +17,7 @@ TEST_CASE("Layout POSITIVE test") {
     SECTION("getLabel() Check map") {
 
         FILE* in;
-        in = fopen("tests/source/map.in", "r");
+        in = fopen("tests/source/positive/map.in", "r");
 
         Layout* l = new Layout(in);
         Point* a = new Point(0,0);
@@ -47,5 +47,14 @@ TEST_CASE("Layout POSITIVE test") {
         delete(f);
         delete(g);
         delete(h);
+    }
+}
+
+TEST_CASE("Layout NEGATIVE test") {
+    SECTION("Constructor()") {
+        FILE* in;
+        in = fopen("tests/source/negative/map.in", "r");
+
+        CHECK_THROWS(new Layout(in));       
     }
 }

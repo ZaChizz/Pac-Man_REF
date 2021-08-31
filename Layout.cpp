@@ -5,8 +5,9 @@ Layout::Layout(FILE *in): ILayout(), in(in) {
     int countSymbols = 0;
     for ( int row = 0 ; row < ROWS; row++ ) {
         for ( int col = 0; col < COLS; col++ ) {
-            fscanf(in, "%c", &this->matrix[row][col]);
-            countSymbols++;
+            if ( fscanf(in, "%c", &this->matrix[row][col]) != EOF ) {
+                countSymbols++;    
+            }
         }
     }
 
