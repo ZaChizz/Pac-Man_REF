@@ -1,6 +1,6 @@
 #include "hpp/Moover.h"
 
-Moover::Moover(Layout* layout, Unit* unit): layout(layout), unit(unit) {
+Moover::Moover(ILayout* layout, IUnit* unit): IMoover(), layout(layout), unit(unit) {
     this->buffer.push('*');
 }
 

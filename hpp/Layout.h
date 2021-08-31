@@ -1,24 +1,16 @@
-#include "../config.h"
-
 #ifndef LAYOUT_H
 #define LAYOUT_H
 
-#ifndef ROWS
-#define ROWS 10
-#endif
-
-#ifndef COLS
-#define COLS 11
-#endif
-
+#include "../config.h"
 #include <iostream>
 #include <iterator>
 #include <cstdio>
 #include "Point.h"
 
 #include "../exceptions/LayoutException.cpp"
+#include "../interfaces/ILayout.h"
 
-class Layout {
+class Layout: public ILayout {
     private:
         FILE* in;
         int matrixSize;
@@ -28,8 +20,8 @@ class Layout {
         Layout(FILE* in);
         ~Layout();
 
-        void setPoint(char label, Point* coord);
-        char getLabel(Point* coord);
+        void setPoint(char label, IPoint* coord);
+        char getLabel(IPoint* coord);
 
         void render();
 

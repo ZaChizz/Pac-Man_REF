@@ -1,6 +1,6 @@
 #include "hpp/Compass.h"
 
-Compass::Compass() {
+Compass::Compass(): ICompass() {
     this->forward = 'w';
     this->backward = 's';
     this->left = 'a';
@@ -49,7 +49,7 @@ void Compass::goTwist(char side) {
         goBack(&this->forward, &this->right);
         goBack(&this->backward, &this->left);
     } else {
-        throw CompassException("Wrong side! The side would be 'l' or 'r'.");
+        throw CompassException("Wrong side! The side would be 'l' or 'r'. It means Left and Right.");
     }
 }
 

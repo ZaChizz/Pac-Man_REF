@@ -1,9 +1,10 @@
 #ifndef COMPASS_H
 #define COMPASS_H
 
+#include "../interfaces/ICompass.h"
 #include "../exceptions/CompassException.cpp"
 
-class Compass {
+class Compass: public ICompass {
     private:
         char forward;
         char backward;

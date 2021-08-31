@@ -4,8 +4,9 @@
 #include <iostream>
 #include <cmath>
 #include "../exceptions/PointException.cpp"
+#include "../interfaces/IPoint.h"
 
-class Point {
+class Point: public IPoint {
     private:
         int x;
         int y;
@@ -15,8 +16,8 @@ class Point {
         Point(const Point& point);
         ~Point();
 
-        int getX() const;
-        int getY() const;
+        int getX();
+        int getY();
 
         void setX(int x);
         void setY(int y);
@@ -30,10 +31,7 @@ class Point {
         bool operator!=(const Point& other) const;
 
         double distance(const Point& other) const;
-        
-        friend std::ostream& operator<<(std::ostream& out, const Point& p);
-};
 
-std::ostream& operator<<(std::ostream& out, const Point& p);
+};
 
 #endif // POINT_H

@@ -1,6 +1,8 @@
 #include "hpp/Unit.h"
+#include "interfaces/IUnit.h"
 
-Unit::Unit(char label): label(label) {
+Unit::Unit(char label): IUnit() {
+    this->label = label;
     this->coord = new Point();
 }
 
@@ -12,7 +14,7 @@ char Unit::getLabel() {
     return this->label;
 }
 
-Point* Unit::getCoord() {
+IPoint* Unit::getCoord() {
     return this->coord;
 }
 

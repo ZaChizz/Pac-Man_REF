@@ -5,6 +5,12 @@ compile:
 	g++ -o tmp/Moover.o Moover.cpp -c
 	g++ -o tmp/Compass.o Compass.cpp -c
 	g++ -o tmp/Navigator.o Navigator.cpp -c
+	g++ -o tmp/IPoint.o interfaces/IPoint.cpp -c
+	g++ -o tmp/ICompass.o interfaces/ICompass.cpp -c
+	g++ -o tmp/IUnit.o interfaces/IUnit.cpp -c
+	g++ -o tmp/ILayout.o interfaces/ILayout.cpp -c
+	g++ -o tmp/IMoover.o interfaces/IMoover.cpp -c
+	g++ -o tmp/INavigator.o interfaces/INavigator.cpp -c
 
 
 test: compile

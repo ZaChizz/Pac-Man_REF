@@ -1,18 +1,19 @@
 #ifndef UNIT_H
 #define UNIT_H
 
-#include "Point.h"
 #include "../exceptions/UnitException.cpp"
+#include "../interfaces/IUnit.h"
+#include "Point.h"
 
-class Unit {
+class Unit: public IUnit {
     private:
-        Point* coord;
+        IPoint* coord;
         char label;
     public:
         Unit(char label);
         ~Unit();
         char getLabel();
-        Point* getCoord();
+        IPoint* getCoord();
         void setStartPoint(int x, int y);
 };
 

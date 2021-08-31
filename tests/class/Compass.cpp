@@ -1,6 +1,6 @@
 #include "../../hpp/Compass.h"
 
-TEST_CASE("Compass positive test") {
+TEST_CASE("Compass POSITIVE test") {
     SECTION("Constructor") {
         Compass* a;
         
@@ -31,7 +31,7 @@ TEST_CASE("Compass positive test") {
     }
 }
 
-TEST_CASE("Compass negative test") {
+TEST_CASE("Compass NEGATIVE test") {
     SECTION("Check Calibrate()") {
         Compass* a;
         

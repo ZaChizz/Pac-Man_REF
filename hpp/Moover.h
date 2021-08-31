@@ -1,20 +1,23 @@
+
+
 #ifndef MOOVER_H
 #define MOOVER_H
 
+#include "../config.h"
 #include <queue>
-#include "Layout.h"
-#include "Unit.h"
-#include "Point.h"
+#include "../interfaces/ILayout.h"
+#include "../interfaces/IUnit.h"
+#include "../interfaces/IMoover.h"
 #include "../exceptions/MooverException.cpp"
 
-class Moover {
+class Moover: public IMoover {
     private:
-        Layout* layout;
-        Unit* unit;
+        ILayout* layout;
+        IUnit* unit;
         std::queue<char> buffer;
 
     public:
-        Moover(Layout* layout, Unit* unit);
+        Moover(ILayout* layout, IUnit* unit);
         ~Moover();
 
         void start();
@@ -29,7 +32,6 @@ class Moover {
 
         bool checkBoard();
         bool checkTrail();
-        
 };
 
 #endif

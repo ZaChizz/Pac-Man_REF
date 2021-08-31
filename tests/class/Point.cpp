@@ -2,6 +2,12 @@
 
 TEST_CASE("Point POSITIVE test") {
     SECTION("Constructor") {
+        Point* a;
+        CHECK_NOTHROW( a = new Point() );
+        delete(a);
+    }
+
+    SECTION("Check getX() and getY(). Constructor with default paramters.") {
 
         Point* a = new Point();
         REQUIRE( a->getX() == 0 );
@@ -10,7 +16,7 @@ TEST_CASE("Point POSITIVE test") {
         delete(a);
     }
 
-    SECTION("Constructor with paramters") {
+    SECTION("Check getX() and getY(). Constructor with custom paramters.") {
 
         Point* a = new Point(1,20);
         REQUIRE( a->getX() == 1 );

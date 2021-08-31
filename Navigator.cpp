@@ -1,6 +1,6 @@
 #include "hpp/Navigator.h"
 
-Navigator::Navigator(Moover* unitMoover) {
+Navigator::Navigator(IMoover* unitMoover): INavigator() {
     this->unitCompass = new Compass();
     this->unitMoover = unitMoover;
 }

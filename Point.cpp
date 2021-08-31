@@ -1,6 +1,10 @@
 #include "hpp/Point.h"
 
-Point::Point(int x, int y): x(x), y(y) {}
+Point::Point(int x, int y): IPoint(), x(x), y(y) {
+    if ( x < 0 || y < 0 ) {
+        throw PointException("Coord X and Y shoud be >= 0.");
+    }
+}
 
 Point::Point(const Point& point) {
     this->x = point.x;
@@ -9,11 +13,11 @@ Point::Point(const Point& point) {
 
 Point::~Point() {}
 
-int Point::getX() const {
+int Point::getX() {
     return this->x;
 }
 
-int Point::getY() const {
+int Point::getY() {
     return this->y;
 }
 
@@ -51,9 +55,4 @@ bool Point::operator!=(const Point& other) const {
 
 double Point::distance(const Point& other) const {
     return hypot(this->x - other.x, this->y - other.y);
-}
-
-std::ostream& operator<<(std::ostream& out, const Point& p) {
-    out << "(" << p.x << ", " << p.y << ")";
-    return out;
 }

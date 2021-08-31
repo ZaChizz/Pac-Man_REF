@@ -1,6 +1,7 @@
 #include "hpp/Layout.h"
+#include "interfaces/ILayout.h"
 
-Layout::Layout(FILE *in): in(in) {
+Layout::Layout(FILE *in): ILayout(), in(in) {
     int countSymbols = 0;
     for ( int row = 0 ; row < ROWS; row++ ) {
         for ( int col = 0; col < COLS; col++ ) {
@@ -19,11 +20,11 @@ Layout::~Layout() {
     fclose(this->in);
 }
 
-void Layout::setPoint(char label, Point* coord) {
+void Layout::setPoint(char label, IPoint* coord) {
     this->matrix[coord->getX()][coord->getY()] = label;
 }
 
-char Layout::getLabel(Point* coord) {
+char Layout::getLabel(IPoint* coord) {
     return this->matrix[coord->getX()][coord->getY()]; 
 }
 
