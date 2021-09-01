@@ -6,8 +6,6 @@ class IMoover {
 		IMoover();
 		~IMoover();
 
-		virtual void start()=0;
-
         virtual void moove(char direction)=0;
         virtual void moove(char direction, char tail)=0;
 

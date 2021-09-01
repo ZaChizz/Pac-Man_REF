@@ -36,10 +36,6 @@ int main() {
     navigatorShadow = new Navigator(mooverShadow);
     navigatorSpeedy = new Navigator(mooverSpeedy);
 
-    mooverPacman->start();
-    mooverShadow->start();
-    mooverSpeedy->start();
-
     do {
         system("cls");
         mainLayout->render();

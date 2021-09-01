@@ -15,12 +15,11 @@ class Moover: public IMoover {
         ILayout* layout;
         IUnit* unit;
         std::queue<char> buffer;
+        void start();
 
     public:
         Moover(ILayout* layout, IUnit* unit);
         ~Moover();
-
-        void start();
 
         void moove(char direction);
         void moove(char direction, char tail);

@@ -2,6 +2,7 @@
 
 Moover::Moover(ILayout* layout, IUnit* unit): IMoover(), layout(layout), unit(unit) {
     this->buffer.push('*');
+    this->start();
 }
 
 Moover::~Moover() {
