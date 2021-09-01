@@ -1,16 +1,16 @@
 #include "hpp/Navigator.h"
 
-Navigator::Navigator(IMoover* unitMoover): INavigator() {
+Navigator::Navigator(IMoover* moover): INavigator() {
     try {
-        this->unitCompass = new Compass();    
+        this->compass = new Compass();    
     } catch(const CompassException& e) {
         throw NavigatorException("Compass class didn't made. Check the Compass class constructor.");
     }
-    this->unitMoover = unitMoover;
+    this->moover = moover;
 }
 
 Navigator::~Navigator() {
-    delete(this->unitCompass);
+    delete(this->compass);
 }
 
 char Navigator::getWay() {
@@ -26,18 +26,18 @@ char Navigator::navigate() {
 void Navigator::checkDirections() {
     this->countDirections = 0;
 
-    if ( this->unitMoover->checkDirection(this->unitCompass->getForward()) ) {
-        this->directions[this->countDirections] = this->unitCompass->getForward();
+    if ( this->moover->checkDirection(this->compass->getForward()) ) {
+        this->directions[this->countDirections] = this->compass->getForward();
         this->countDirections += 1;
     }
 
-    if ( this->unitMoover->checkDirection(this->unitCompass->getRight()) ) {
-        this->directions[this->countDirections] = this->unitCompass->getRight();
+    if ( this->moover->checkDirection(this->compass->getRight()) ) {
+        this->directions[this->countDirections] = this->compass->getRight();
         this->countDirections += 1;
     }
 
-    if ( this->unitMoover->checkDirection(this->unitCompass->getLeft()) ) {
-        this->directions[this->countDirections] = this->unitCompass->getLeft();
+    if ( this->moover->checkDirection(this->compass->getLeft()) ) {
+        this->directions[this->countDirections] = this->compass->getLeft();
         this->countDirections += 1;
     }
 }
@@ -49,8 +49,8 @@ void Navigator::chooseDirection() {
     } else if ( this->countDirections == 1 ) {
         this->way = directions[0];
     } else {
-        this->way = this->unitCompass->getBackward();
+        this->way = this->compass->getBackward();
     }
 
-    this->unitCompass->calibrate(this->way);
+    this->compass->calibrate(this->way);
 }

@@ -15,4 +15,20 @@ TEST_CASE("Moover POSITIVE test") {
         delete(u);
         delete(m);
     }
+
+    SECTION("moove()") {
+
+    }
+
+    SECTION("moove() with a tail") {
+        
+    }
+
+    SECTION("checkDirection()") {
+
+    }
+
+    SECTION("nextPoint()") {
+        
+    }
 }

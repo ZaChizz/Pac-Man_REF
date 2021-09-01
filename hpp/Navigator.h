@@ -11,13 +11,13 @@
 
 class Navigator: public INavigator {
     public:
-        Navigator(IMoover* unitMoover);
+        Navigator(IMoover* moover);
         ~Navigator();
         char getWay();
         char navigate();
     private:
-        ICompass* unitCompass;
-        IMoover* unitMoover;
+        ICompass* compass;
+        IMoover* moover;
         char way;
         char directions[4];
         int countDirections;

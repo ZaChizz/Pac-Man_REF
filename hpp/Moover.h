@@ -16,6 +16,9 @@ class Moover: public IMoover {
         IUnit* unit;
         std::queue<char> buffer;
         void start();
+        void rollBack(char direction);
+        bool checkBoard();
+        bool checkTrail();
 
     public:
         Moover(ILayout* layout, IUnit* unit);
@@ -27,10 +30,6 @@ class Moover: public IMoover {
         bool checkDirection(char direction);
 
         void nextPoint(char direction);
-        void rollBack(char direction);
-
-        bool checkBoard();
-        bool checkTrail();
 };
 
 #endif

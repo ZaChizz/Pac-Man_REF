@@ -22,7 +22,7 @@ testDetail: compile
 	rm mainTest.exe	
 
 coverage:
-	g++ -std=c++20 --coverage MainTest.cpp tmp/*.o -o testCoverage.exe && ./testCoverage.exe
+	g++ --coverage tests/mainTest.cpp tmp/*.o -o testCoverage.exe && ./testCoverage.exe
 	lcov -t "testCoverage" -o testCoverage.info -c -d . --rc lcov_branch_coverage=1
 	genhtml -o report testCoverage.info --rc lcov_branch_coverage=1
 
