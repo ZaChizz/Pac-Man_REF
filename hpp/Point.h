@@ -26,12 +26,6 @@ class Point: public IPoint {
         void increaseY();
         void decreaseX();
         void decreaseY();
-        
-        bool operator==(const Point& other) const;
-        bool operator!=(const Point& other) const;
-
-        double distance(const Point& other) const;
-
 };
 
 #endif // POINT_H

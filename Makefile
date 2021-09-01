@@ -20,7 +20,11 @@ test: compile
 
 testDetail: compile
 	g++ -o mainTest.exe tests/mainTest.cpp tmp/*.o && ./mainTest.exe -s
-	rm mainTest.exe	
+	rm mainTest.exe
+
+testLight:
+	g++ -o mainTest.exe tests/mainTest.cpp tmp/*.o && ./mainTest.exe
+	rm mainTest.exe 
 
 coverage:
 	g++ --coverage tests/mainTest.cpp tmp/*.o -o testCoverage.exe && ./testCoverage.exe

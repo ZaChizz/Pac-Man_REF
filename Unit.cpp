@@ -17,8 +17,3 @@ char Unit::getLabel() {
 IPoint* Unit::getCoord() {
     return this->coord;
 }
-
-void Unit::setStartPoint(int x, int y) {
-    this->coord->setX(x);
-    this->coord->setY(y);
-}

@@ -4,7 +4,7 @@
 #include "../../hpp/Point.h"
 
 TEST_CASE("Layout POSITIVE test") {
-    SECTION("Constructor()") {
+    SECTION("Constructor() check Throws") {
         FILE* in;
         in = fopen("tests/source/positive/map.in", "r");
         Layout* l;
@@ -13,6 +13,43 @@ TEST_CASE("Layout POSITIVE test") {
 
         delete(l);        
     }
+
+    SECTION("getLabel() check Throws") {
+        FILE* in;
+        in = fopen("tests/source/positive/map.in", "r");
+        Layout* l = new Layout(in);
+        Point* a = new Point(0,0);
+
+        CHECK_NOTHROW(l->getLabel(a));
+
+        delete(l);
+        delete(a);
+    }
+
+    SECTION("setPoint() check Throws") {
+        FILE* in;
+        in = fopen("tests/source/positive/map.in", "r");
+        Layout* l = new Layout(in);
+        Point* a = new Point(0,0);
+
+        CHECK_NOTHROW(l->setPoint('%', a));
+
+        delete(l);
+        delete(a);
+    }
+
+    SECTION("getLabel() check Point") {
+        FILE* in;
+        in = fopen("tests/source/positive/map.in", "r");
+        Layout* l = new Layout(in);
+        Point* a = new Point(0,0);
+        l->setPoint('%', a);
+
+        REQUIRE( l->getLabel(a) == '%' );
+
+        delete(l);
+        delete(a);
+    }   
 
     SECTION("getLabel() Check map") {
 
@@ -89,6 +126,18 @@ TEST_CASE("Layout POSITIVE test") {
         delete(i);
         delete(j);
     }
+
+    SECTION("render() check Throws") {
+        FILE* in;
+        in = fopen("tests/source/positive/map.in", "r");
+        Layout* l = new Layout(in);
+
+        CHECK_NOTHROW(l->render());
+
+        delete(l);
+    }
+
+
 }
 
 TEST_CASE("Layout NEGATIVE test") {

@@ -14,7 +14,6 @@ class Unit: public IUnit {
         ~Unit();
         char getLabel();
         IPoint* getCoord();
-        void setStartPoint(int x, int y);
 };
 
 #endif
