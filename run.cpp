@@ -51,5 +51,15 @@ int main() {
 
     system("pause");
 
+    delete(navigatorSpeedy);
+    delete(navigatorShadow);
+    delete(mooverSpeedy);
+    delete(mooverShadow);
+    delete(mooverPacman);
+    delete(unitSpeedy);
+    delete(unitShadow);
+    delete(unitPacman);
+    delete(mainLayout);
+
     return 0;
 }
