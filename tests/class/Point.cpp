@@ -1,7 +1,7 @@
 #include "../../hpp/Point.h"
 
 TEST_CASE("Point POSITIVE test") {
-    SECTION("Constructor") {
+    SECTION("Constructor()") {
         Point* a;
         CHECK_NOTHROW( a = new Point() );
         delete(a);

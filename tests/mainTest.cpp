@@ -6,3 +6,4 @@
 #include "class/Compass.cpp"
 #include "class/Layout.cpp"
 #include "class/Moover.cpp"
+#include "class/Navigator.cpp"

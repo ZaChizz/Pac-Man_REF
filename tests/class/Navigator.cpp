@@ -2,12 +2,24 @@
 #include "../../hpp/Moover.h"
 
 TEST_CASE("Navigator POSITIVE test") {
-    SECTION("Constructor") {
+    SECTION("Constructor()") {
 
-        Navigator* a = new Navigator();
-        REQUIRE( a->getX() == 0 );
-        REQUIRE( a->getY() == 0 );
+        FILE* in;
+        in = fopen("tests/source/positive/map.in", "r");
+        Layout* l = new Layout(in);
+        Unit* u = new Unit('$');
+        Moover* m = new Moover(l, u);
+        Navigator* n;
 
-        delete(a);
+        CHECK_NOTHROW(n = new Navigator(m));
+
+        delete(l);
+        delete(u);
+        delete(m);
+        delete(n);
+    }
+
+    SECTION("Navigate()") {
+
     }
 }

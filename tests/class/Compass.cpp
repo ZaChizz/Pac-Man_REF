@@ -1,7 +1,7 @@
 #include "../../hpp/Compass.h"
 
 TEST_CASE("Compass POSITIVE test") {
-    SECTION("Constructor") {
+    SECTION("Constructor()") {
         Compass* a;
         
         CHECK_NOTHROW(a = new Compass());

@@ -8,8 +8,6 @@ class INavigator {
 
 		virtual char getWay()=0;
         virtual char navigate()=0;
-        virtual void checkDirections()=0;
-        virtual void chooseDirection()=0;
 };
 
 #endif

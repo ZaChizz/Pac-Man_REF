@@ -8,9 +8,11 @@ TEST_CASE("Moover POSITIVE test") {
         in = fopen("tests/source/positive/map.in", "r");
         Layout* l = new Layout(in);
         Unit* u = new Unit('$');
+        Moover* m;
 
-        CHECK_NOTHROW(new Moover(l, u));
+        CHECK_NOTHROW(m = new Moover(l, u));
         delete(l);
         delete(u);
+        delete(m);
     }
 }

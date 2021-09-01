@@ -15,14 +15,14 @@ class Navigator: public INavigator {
         ~Navigator();
         char getWay();
         char navigate();
-        void checkDirections();
-        void chooseDirection();
     private:
         ICompass* unitCompass;
         IMoover* unitMoover;
         char way;
         char directions[4];
         int countDirections;
+        void checkDirections();
+        void chooseDirection();
 };
 
 #endif

@@ -1,7 +1,11 @@
 #include "hpp/Navigator.h"
 
 Navigator::Navigator(IMoover* unitMoover): INavigator() {
-    this->unitCompass = new Compass();
+    try {
+        this->unitCompass = new Compass();    
+    } catch(const CompassException& e) {
+        throw NavigatorException("Compass class didn't made. Check the Compass class constructor.");
+    }
     this->unitMoover = unitMoover;
 }
 
@@ -10,6 +14,12 @@ Navigator::~Navigator() {
 }
 
 char Navigator::getWay() {
+    return this->way;
+}
+
+char Navigator::navigate() {
+    this->checkDirections();
+    this->chooseDirection();
     return this->way;
 }
 
@@ -43,10 +53,4 @@ void Navigator::chooseDirection() {
     }
 
     this->unitCompass->calibrate(this->way);
-}
-
-char Navigator::navigate() {
-    this->checkDirections();
-    this->chooseDirection();
-    return this->way;
 }

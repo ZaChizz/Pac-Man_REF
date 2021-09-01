@@ -48,6 +48,47 @@ TEST_CASE("Layout POSITIVE test") {
         delete(g);
         delete(h);
     }
+
+    SECTION("getLabel() Check end line in the map") {
+
+        FILE* in;
+        in = fopen("tests/source/positive/map.in", "r");
+
+        Layout* l = new Layout(in);
+        Point* a = new Point(0,40);
+        Point* b = new Point(1,40);
+        Point* c = new Point(2,40);
+        Point* d = new Point(3,40);
+        Point* e = new Point(4,40);
+        Point* f = new Point(5,40);
+        Point* g = new Point(6,40);
+        Point* h = new Point(7,40);
+        Point* i = new Point(8,40);
+        Point* j = new Point(9,40);
+
+        REQUIRE( l->getLabel(a) == '\n' );
+        REQUIRE( l->getLabel(b) == '\n' );
+        REQUIRE( l->getLabel(c) == '\n' );
+        REQUIRE( l->getLabel(d) == '\n' );
+        REQUIRE( l->getLabel(e) == '\n' );
+        REQUIRE( l->getLabel(f) == '\n' );
+        REQUIRE( l->getLabel(g) == '\n' );
+        REQUIRE( l->getLabel(h) == '\n' );
+        REQUIRE( l->getLabel(i) == '\n' );
+        REQUIRE( l->getLabel(j) == '\n' );
+
+        delete(l);
+        delete(a);
+        delete(b);
+        delete(c);
+        delete(d);
+        delete(e);
+        delete(f);
+        delete(g);
+        delete(h);
+        delete(i);
+        delete(j);
+    }
 }
 
 TEST_CASE("Layout NEGATIVE test") {
