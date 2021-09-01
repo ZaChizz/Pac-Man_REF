@@ -2,9 +2,9 @@
 #define IMOOVER_H
 
 class IMoover {
-	public:
-		IMoover();
-		~IMoover();
+    public:
+        IMoover();
+        ~IMoover();
 
         virtual void moove(char direction)=0;
         virtual void moove(char direction, char tail)=0;

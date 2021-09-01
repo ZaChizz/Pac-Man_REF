@@ -1,13 +1,13 @@
 #include "hpp/Moover.h"
 
-Moover::Moover(ILayout* layout, IUnit* unit): IMoover(), layout(layout), unit(unit) {
+Moover::Moover(ILayout* layout, IUnit* unit): IMoover4Navigator(), IMoover() {
+    this->layout = layout;
+    this->unit = unit;
     this->buffer.push('*');
     this->start();
 }
 
-Moover::~Moover() {
-
-}
+Moover::~Moover() {}
 
 void Moover::start() {
     if ( this->checkBoard() && this->checkTrail() ) {
@@ -16,7 +16,6 @@ void Moover::start() {
         throw MooverException("Can't start(). Check the DEFAULT_COORD in config file.");
     }
 }
-
 
 void Moover::moove(char direction) {
     this->nextPoint(direction);

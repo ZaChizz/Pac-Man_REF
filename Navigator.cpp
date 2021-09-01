@@ -1,6 +1,6 @@
 #include "hpp/Navigator.h"
 
-Navigator::Navigator(IMoover* moover): INavigator() {
+Navigator::Navigator(IMoover4Navigator* moover): INavigator() {
     try {
         this->compass = new Compass();    
     } catch(const CompassException& e) {

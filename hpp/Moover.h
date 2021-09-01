@@ -8,9 +8,10 @@
 #include "../interfaces/ILayout.h"
 #include "../interfaces/IUnit.h"
 #include "../interfaces/IMoover.h"
+#include "../interfaces/IMoover4Navigator.h"
 #include "../exceptions/MooverException.cpp"
 
-class Moover: public IMoover {
+class Moover: public IMoover4Navigator, IMoover {
     private:
         ILayout* layout;
         IUnit* unit;
@@ -26,9 +27,7 @@ class Moover: public IMoover {
 
         void moove(char direction);
         void moove(char direction, char tail);
-
         bool checkDirection(char direction);
-
         void nextPoint(char direction);
 };
 
