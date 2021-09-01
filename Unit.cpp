@@ -1,9 +1,9 @@
 #include "hpp/Unit.h"
 #include "interfaces/IUnit.h"
 
-Unit::Unit(char label): IUnit() {
+Unit::Unit(char label, int x, int y): IUnit() {
     this->label = label;
-    this->coord = new Point();
+    this->coord = new Point(x, y);
 }
 
 Unit::~Unit() {

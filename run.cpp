@@ -25,9 +25,9 @@ int main() {
 
     mainLayout = new Layout(mapIn);
 
-    unitPacman = new Unit('$');
-    unitShadow = new Unit('Q');
-    unitSpeedy = new Unit('G');
+    unitPacman = new Unit('$', (int)PACMAN_DEFAULT_COORD_X, (int)PACMAN_DEFAULT_COORD_Y);
+    unitShadow = new Unit('Q', (int)SHADOW_DEFAULT_COORD_X, (int)SHADOW_DEFAULT_COORD_Y);
+    unitSpeedy = new Unit('G', (int)SPEEDY_DEFAULT_COORD_X,(int)SPEEDY_DEFAULT_COORD_Y);
 
     mooverPacman = new Moover(mainLayout, unitPacman);
     mooverShadow = new Moover(mainLayout, unitShadow);
@@ -35,10 +35,6 @@ int main() {
 
     navigatorShadow = new Navigator(mooverShadow);
     navigatorSpeedy = new Navigator(mooverSpeedy);
-
-    unitPacman->setStartPoint((int)PACMAN_DEFAULT_COORD_X,(int)PACMAN_DEFAULT_COORD_Y);
-    unitShadow->setStartPoint((int)SHADOW_DEFAULT_COORD_X,(int)SHADOW_DEFAULT_COORD_Y);
-    unitSpeedy->setStartPoint((int)SPEEDY_DEFAULT_COORD_X,(int)SPEEDY_DEFAULT_COORD_Y);
 
     mooverPacman->start();
     mooverShadow->start();

@@ -10,7 +10,7 @@ class Unit: public IUnit {
         IPoint* coord;
         char label;
     public:
-        Unit(char label);
+        Unit(char label, int x = 0, int y = 0);
         ~Unit();
         char getLabel();
         IPoint* getCoord();

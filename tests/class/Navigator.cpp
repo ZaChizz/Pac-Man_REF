@@ -18,8 +18,4 @@ TEST_CASE("Navigator POSITIVE test") {
         delete(m);
         delete(n);
     }
-
-    SECTION("Navigate()") {
-
-    }
 }
