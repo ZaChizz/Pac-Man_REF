@@ -1,11 +1,9 @@
-
-
 #ifndef MOOVER_H
 #define MOOVER_H
 
 #include "../config.h"
 #include <queue>
-#include "../interfaces/ILayout.h"
+#include "../interfaces/ILayout4Moover.h"
 #include "../interfaces/IUnit.h"
 #include "../interfaces/IMoover.h"
 #include "../interfaces/IMoover4Navigator.h"
@@ -13,7 +11,7 @@
 
 class Moover: public IMoover4Navigator, IMoover {
     private:
-        ILayout* layout;
+        ILayout4Moover* layout;
         IUnit* unit;
         std::queue<char> buffer;
         void start();
@@ -22,7 +20,7 @@ class Moover: public IMoover4Navigator, IMoover {
         bool checkTrail();
 
     public:
-        Moover(ILayout* layout, IUnit* unit);
+        Moover(ILayout4Moover* layout, IUnit* unit);
         ~Moover();
 
         void moove(char direction);

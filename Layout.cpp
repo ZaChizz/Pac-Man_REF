@@ -1,7 +1,7 @@
 #include "hpp/Layout.h"
-#include "interfaces/ILayout.h"
 
-Layout::Layout(FILE *in): ILayout(), in(in) {
+Layout::Layout(FILE *in): ILayout(), ILayout4Moover() {
+    this->in = in;
     int countSymbols = 0;
     for ( int row = 0 ; row < ROWS; row++ ) {
         for ( int col = 0; col < COLS; col++ ) {

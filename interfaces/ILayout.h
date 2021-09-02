@@ -6,7 +6,7 @@
 class ILayout {
     public:
         ILayout();
-        virtual ~ILayout();
+        ~ILayout();
 
         virtual void setPoint(char label, IPoint* coord)=0;
         virtual char getLabel(IPoint* coord)=0;

@@ -9,6 +9,7 @@ compile:
 	g++ -o tmp/ICompass.o interfaces/ICompass.cpp -c
 	g++ -o tmp/IUnit.o interfaces/IUnit.cpp -c
 	g++ -o tmp/ILayout.o interfaces/ILayout.cpp -c
+	g++ -o tmp/ILayout4Moover.o interfaces/ILayout4Moover.cpp -c
 	g++ -o tmp/IMoover.o interfaces/IMoover.cpp -c
 	g++ -o tmp/IMoover4Navigator.o interfaces/IMoover4Navigator.cpp -c
 	g++ -o tmp/INavigator.o interfaces/INavigator.cpp -c

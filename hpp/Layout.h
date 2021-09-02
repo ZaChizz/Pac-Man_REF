@@ -9,8 +9,9 @@
 
 #include "../exceptions/LayoutException.cpp"
 #include "../interfaces/ILayout.h"
+#include "../interfaces/ILayout4Moover.h"
 
-class Layout: public ILayout {
+class Layout: public ILayout4Moover, ILayout {
     private:
         FILE* in;
         int matrixSize;
